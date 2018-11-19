@@ -30,7 +30,7 @@ client.on('message', message => {
   }
 
   //repeat back the command
-  else if (message.content === prefix + 'repeat') {
+  else if (message.content.startsWith(prefix + 'repeat')) {
     message.channel.send(message.content);
   }
 
