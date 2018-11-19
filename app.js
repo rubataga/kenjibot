@@ -31,10 +31,21 @@ client.on('message', message => {
       .addField('repeat', 'KenjiBot repeats after you')
       .addField('hey', 'hi')
       .addField('uwu', 'perish')
+      .addField('bruh2', 'sends "Bruh Sound Effect #2"')
       .addField('irlkenji', 'see the real Kenji');
       message.channel.send(embed);
+  }
 
-    message.channel.send(embed);
+  else if (message.content === prefix + 'bruh2') {
+    const embed = new Discord.RichEmbed()
+      .setTitle("Bruh Sound Effect #2")
+      .setDescription('bruh!')
+      .setColor(0xC90808)
+      .url('https://www.youtube.com/watch?v=2ZIpFytCSVc')
+      .addField('https://www.youtube.com/watch?v=2ZIpFytCSVc')
+      .setFooter('bruh moment');
+      message.channel.send(embed);
+    //https://www.youtube.com/watch?v=2ZIpFytCSVc
   }
 
   else if (message.content === prefix + 'pong') {
