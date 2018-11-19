@@ -41,7 +41,6 @@ client.on('message', message => {
       .setTitle("Bruh Sound Effect #2")
       .setDescription('bruh!')
       .setColor(0xC90808)
-      .url('https://www.youtube.com/watch?v=2ZIpFytCSVc')
       .addField('https://www.youtube.com/watch?v=2ZIpFytCSVc')
       .setFooter('bruh moment');
       message.channel.send(embed);
