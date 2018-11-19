@@ -34,32 +34,32 @@ client.on('message', message => {
       .addField('bruh2', 'sends "Bruh Sound Effect #2"')
       .addField('irlkenji', 'see the real Kenji');
     message.channel.send(embed);
-  };
+  }
 
   else if (message.content === prefix + 'bruh2') {
     message.channel.send('bruh!')
     message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc')
     //https://www.youtube.com/watch?v=2ZIpFytCSVc
-  };
+  }
 
   else if(message.content === prefix + 'bruhtest') {
     message.channel.send("bruh test", {
       file: "https://www.youtube.com/watch?v=2ZIpFytCSVc"
-  })};
+  })}
 
   else if(message.content === prefix + 'bruhfile') {
     const bruhsound = new Discord.Attatchment('./media/bruh2.mp3')
     message.channel.send(bruhsound)
-  };
+  }
 
   else if (message.content === prefix + 'pong') {
     message.channel.send('ping');
-  };
+  }
 
   //the commander is double gay
   else if (message.content === prefix + 'nohomo') {
     message.channel.send('^ is extra double gay')
-  };
+  }
 
   //respond to hey
   else if (message.content === prefix + 'hey') {
