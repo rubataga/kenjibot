@@ -37,13 +37,7 @@ client.on('message', message => {
   }
 
   else if (message.content === prefix + 'bruh2') {
-    const embed = new Discord.RichEmbed()
-      .setTitle("Bruh Sound Effect #2")
-      .setDescription('bruh!')
-      .setColor(0xC90808)
-      .addField('https://www.youtube.com/watch?v=2ZIpFytCSVc')
-      .setFooter('bruh moment');
-      message.channel.send(embed);
+      message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc');
     //https://www.youtube.com/watch?v=2ZIpFytCSVc
   }
 
