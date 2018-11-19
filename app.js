@@ -20,28 +20,28 @@ client.on('message', message => {
   }
 
   //the commander is double gay
-  elseif (message.content === prefix + 'nohomo') {
+  else if (message.content === prefix + 'nohomo') {
     message.channel.send('^ is extra double gay');
   }
 
   //respond to hey
-  elseif (message.content === prefix + 'hey') {
+  else if (message.content === prefix + 'hey') {
     message.channel.send('hi');
   }
 
   //repeat back the command
-  elseif (message.content === prefix + 'repeat') {
+  else if (message.content === prefix + 'repeat') {
     message.channel.send(message.content);
   }
 
   //uwu reponse
-  elseif (message.content === prefix + 'uwu'){
+  else if (message.content === prefix + 'uwu'){
     message.channel.send('st*u weeaboo scum');
     message.channel.send('jk chieftains that was a prank of course uwu uwu uuuwd');
   }
 
   //send an embed of Kenji
-  elseif(message.content === prefix + 'irlkenji'){
+  else if(message.content === prefix + 'irlkenji'){
     const embed = new Discord.RichEmbed()
       .setTitle('KenjiBot IRL')
       .setColor(0xC90808)
