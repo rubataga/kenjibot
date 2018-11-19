@@ -74,7 +74,7 @@ client.on('message', message => {
     message.channel.send('hi')
   }
 
-  else if (message.content === 'sicko mode'){
+  else if (message.content === prefix + 'sicko mode'){
     message.channel.send('SICKO MODE!')
     message.channel.send('https://www.youtube.com/watch?v=6ONRf7h3Mdk')
   }
@@ -83,27 +83,27 @@ client.on('message', message => {
     message.channel.send(message.content.subStr(8));
   }
 
-  else if (message.content === "maybe i'll be tracer"){
+  else if (message.content === prefix + "maybe i'll be tracer"){
     message.channel.send("i'm already tracer")
   }
 
-  else if (message.content === "what about widowmaker"){
+  else if (message.content === prefix + "what about widowmaker"){
     message.channel.send("i'm already widowmaker")
   }
 
-  else if (message.content === "i'll be bastion"){
+  else if (message.content === prefix + "i'll be bastion"){
     message.channel.send("NERF BASTION")
   }
 
-  else if (message.content === "you're right, so winston"){
+  else if (message.content === prefix + "you're right, so winston"){
     message.channel.send("i wanna be winston")
   }
 
-  else if (message.content === "i guess i'll be genji"){
+  else if (message.content === prefix + "i guess i'll be genji"){
     message.channel.send("i'm already genji")
   }
 
-  else if (message.content === "then i'll be mccree"){
+  else if (message.content === prefix + "then i'll be mccree"){
     message.channel.send("i already chose mccree")
   }
   //uwu reponse
