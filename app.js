@@ -19,6 +19,24 @@ client.on('message', message => {
     message.channel.send('pong');
   }
 
+  //help command
+  else if(message.content === prefix + 'help'){
+    const embed = new Discord.RichEmbed()
+      .setTitle("KenjiBot's Commands")
+      .setDescription('all commands begin with "~"')
+      .setColor(0xC90808)
+      .addField('pong', 'returns "ping"')
+      .addField('ping', 'returns "pong"')
+      .addField('nohomo', 'become non homosexual')
+      .addField('repeat', 'KenjiBot repeats after you')
+      .addField('hey', 'hi')
+      .addField('uwu', 'perish')
+      .addField('irlkenji', 'see the real Kenji');
+      message.channel.send(embed);
+
+    message.channel.send(embed);
+  }
+
   else if (message.content === prefix + 'pong') {
     message.channel.send('ping');
   }
@@ -33,9 +51,9 @@ client.on('message', message => {
     message.channel.send('hi');
   }
 
-  //repeat back the command
+  //repeat back the command ~repeat a
   else if (message.content.startsWith(prefix + 'repeat')) {
-    message.channel.send(message.content);
+    message.channel.send(message.content.subStr(8));
   }
 
   //uwu reponse
