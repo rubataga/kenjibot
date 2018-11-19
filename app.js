@@ -19,6 +19,10 @@ client.on('message', message => {
     message.channel.send('pong');
   }
 
+  else if (message.content === prefix + 'pong') {
+    message.channel.send('ping');
+  }
+
   //the commander is double gay
   else if (message.content === prefix + 'nohomo') {
     message.channel.send('^ is extra double gay');
