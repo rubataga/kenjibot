@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = require('./settings.json').token;
-var prefix = '~';
-var prefix2 = 'kb.';
+const settings = require('./settings.json');
+const TOKEN = settings.token;
+const PREFIXES = settings.prefixes;
 
 client.on('ready',() => {
   console.log('This is it chief.');
@@ -10,8 +10,16 @@ client.on('ready',() => {
 
 
 client.on('message', message => {
-  if(!message.content.startsWith(prefix)) return;
-  console.log("prefix detected");
+  let prefix;
+  for (i in PREFIXES)
+  {
+    let p = PREFIXES[i]
+    if (message.content.startsWith(p))
+      prefix = p
+  }
+  if (!prefix)
+    return
+  
   if (message.author.bot) return;
 
   //commands
@@ -80,4 +88,4 @@ client.on('message', message => {
 
 });
 
-client.login(token);
+client.login(TOKEN);
