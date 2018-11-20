@@ -60,6 +60,14 @@ client.on('message', message => {
     message.channel.send(bruhsound)
   }
 
+  else if(message.content === prefix + 'bruhmmnt') {
+    message.channel.send('bruh moment!', {
+      files: [
+        './media/bruh2.mp3'
+      ]
+    })
+  }
+
   else if (message.content === prefix + 'pong') {
     message.channel.send('ping');
   }
