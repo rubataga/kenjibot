@@ -44,7 +44,7 @@ client.on('message', message => {
     message.channel.send(embed);
   }
 
-  else if (message.content === 'bruh') {
+  else if (message.content === prefix + 'bruh') {
     message.channel.send('this is a "bruh" moment!')
     message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc')
     //https://www.youtube.com/watch?v=2ZIpFytCSVc
