@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const settings = require('./settings.json');
-const TOKEN = require('./token.json').token;
+const TOKEN = process.env.TOKEN ? process.env.TOKEN : require('./token.json').token;
 const PREFIXES = settings.prefixes;
 
 client.on('ready',() => {
