@@ -36,31 +36,33 @@ client.on('message', message => {
       .addField('pong', 'returns "ping"')
       .addField('ping', 'returns "pong"')
       .addField('nohomo', 'become non homosexual')
-      .addField('repeat', 'KenjiBot repeats after you')
+      .addField('repeat', 'KenjiBot repeats after you (broken)')
       .addField('hey', 'hi')
       .addField('uwu', 'perish')
-      .addField('bruh2', 'sends "Bruh Sound Effect #2"')
+      .addField("maybe i'll be tracer", "i'm already tracer")
+      .addField("what about widomaker", "i'm already widowmaker (etc.)")
+      .addField('bruh', 'sends "Bruh Sound Effect #2"')
+      .addField('bruhyt', 'sends a YouTube link to "Bruh Sound Effect #2"')
+      .addField('sicko mode', 'sends a YouTube link to "Sicko Mode"')
       .addField('irlkenji', 'see the real Kenji');
     message.channel.send(embed);
   }
 
-  else if (message.content === prefix + 'bruh') {
+  else if (message.content === prefix + 'bruhyt') {
     message.channel.send('this is a "bruh" moment!')
     message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc')
     //https://www.youtube.com/watch?v=2ZIpFytCSVc
   }
 
-  else if(message.content === prefix + 'bruhtest') {
-    message.channel.send("bruh test", {
-      file: "https://www.youtube.com/watch?v=2ZIpFytCSVc"
-  })}
-
-  else if(message.content === prefix + 'bruhfile') {
-    const bruhsound = new Discord.Attatchment('./media/bruh2.mp3')
-    message.channel.send(bruhsound)
+  else if(message.content === prefix + 'bruh') {
+    message.channel.send('bruh moment!', {
+      files: [
+        './media/bruh2.mp3'
+      ]
+    })
   }
 
-  else if(message.content === prefix + 'bruhmmnt') {
+  else if(message.content.includes('bruh')){
     message.channel.send('bruh moment!', {
       files: [
         './media/bruh2.mp3'
