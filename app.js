@@ -14,21 +14,23 @@ client.on('message', message => {
   for (i in PREFIXES)
   {
     let p = PREFIXES[i]
-    if (message.content.startsWith(p))
+    if (message.content.startsWith(p)){
       prefix = p
+    }
   }
-  if (!prefix)
+  if (!prefix || message.author.bot){
     return
+  }
 
-  if (message.author.bot) return;
-
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
   //commands
-  if (message.content === prefix + 'ping') {
+  if (command === 'ping') {
     message.channel.send('pong');
   }
 
   //help command
-  else if(message.content === prefix + 'help'){
+  else if(command === 'help'){
     const embed = new Discord.RichEmbed()
       .setTitle("KenjiBot's Commands")
       .setDescription('all commands begin with "~"')
@@ -48,13 +50,13 @@ client.on('message', message => {
     message.channel.send(embed);
   }
 
-  else if (message.content === prefix + 'bruhyt') {
+  else if (command === 'bruhyt') {
     message.channel.send('this is a "bruh" moment!')
     message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc')
     //https://www.youtube.com/watch?v=2ZIpFytCSVc
   }
 
-  else if(message.content === prefix + 'bruh') {
+  else if(command === 'bruh') {
     message.channel.send('bruh moment!', {
       files: [
         './media/bruh2.mp3'
@@ -70,21 +72,21 @@ client.on('message', message => {
     })
   }
 
-  else if (message.content === prefix + 'pong') {
+  else if (command === 'pong') {
     message.channel.send('ping');
   }
 
   //the commander is double gay
-  else if (message.content === prefix + 'nohomo') {
+  else if (command === 'nohomo') {
     message.channel.send('^ is extra double gay')
   }
 
   //respond to hey
-  else if (message.content === prefix + 'hey') {
+  else if (command === 'hey') {
     message.channel.send('hi')
   }
 
-  else if (message.content === prefix + 'sicko mode'){
+  else if (command === 'sicko mode'){
     message.channel.send('SICKO MODE!')
     message.channel.send('https://www.youtube.com/watch?v=6ONRf7h3Mdk')
   }
@@ -93,37 +95,37 @@ client.on('message', message => {
     message.channel.send(message.content.subStr(8));
   }
 
-  else if (message.content === prefix + "maybe i'll be tracer"){
+  else if (command === "maybe i'll be tracer"){
     message.channel.send("i'm already tracer")
   }
 
-  else if (message.content === prefix + "what about widowmaker"){
+  else if (commmand === "what about widowmaker"){
     message.channel.send("i'm already widowmaker")
   }
 
-  else if (message.content === prefix + "i'll be bastion"){
+  else if (command === "i'll be bastion"){
     message.channel.send("NERF BASTION")
   }
 
-  else if (message.content === prefix + "you're right, so winston"){
+  else if (command === "you're right, so winston"){
     message.channel.send("i wanna be winston")
   }
 
-  else if (message.content === prefix + "i guess i'll be genji"){
+  else if (command === "i guess i'll be genji"){
     message.channel.send("i'm already genji")
   }
 
-  else if (message.content === prefix + "then i'll be mccree"){
+  else if (command === "then i'll be mccree"){
     message.channel.send("i already chose mccree")
   }
   //uwu reponse
-  else if (message.content === prefix + 'uwu'){
+  else if (command === 'uwu'){
     message.channel.send('st*u weeaboo scum');
     message.channel.send('jk chieftains that was a prank of course uwu uwu uuuwd');
   }
 
   //send an embed of Kenji
-  else if(message.content === prefix + 'irlkenji'){
+  else if(command === 'irlkenji'){
     const embed = new Discord.RichEmbed()
       .setTitle('KenjiBot IRL')
       .setColor(0xC90808)
