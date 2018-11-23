@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'sicko mode',
+    name: 'sicko-mode',
     description: 'young la flame he in sicko mode',
     execute(message, args) {
       message.channel.send('SICKO MODE!')
