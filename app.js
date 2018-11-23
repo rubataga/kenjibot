@@ -9,13 +9,13 @@ const PREFIXES = settings.prefixes;
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-    const command = require('./commands/${file}'');
+    const command = require('./commands/' + file);
     client.commands.set(command.name, command);
 }
 
 client.on('ready',() => {
   console.log('This is it chief.');
-  client.user.setActivity('"~", type "~help" for help');
+  client.user.setActivity('prefix: "~", type "~help" for help');
 });
 
 
@@ -40,16 +40,16 @@ client.on('message', message => {
     message.channel.send('pong');
   }
 
-  if (command === 'thank') {
+  else if (client.commands.has(command)) {
     try {
       client.commands.get(command).execute(message, args);
     }
     catch (error) {
       console.error(error);
-      message.reply('there was an error trying to execute that command!');
+      message.reply('Uh oh. Houston, we have a bruh "moment" (an error has occured)');
     }
-    
   }
+
   //help command
   else if(command === 'help'){
     const embed = new Discord.RichEmbed()
@@ -71,35 +71,8 @@ client.on('message', message => {
     message.channel.send(embed);
   }
 
-  else if (command === 'bruhyt') {
-    message.channel.send('this is a "bruh" moment!')
-    message.channel.send('https://www.youtube.com/watch?v=2ZIpFytCSVc')
-    //https://www.youtube.com/watch?v=2ZIpFytCSVc
-  }
-
-  else if(command === 'bruh') {
-    message.channel.send('bruh moment!', {
-      files: [
-        './media/bruh2.mp3'
-      ]
-    })
-  }
-
-  else if(message.content.includes('bruh')){
-    message.channel.send('bruh moment!', {
-      files: [
-        './media/bruh2.mp3'
-      ]
-    })
-  }
-
   else if (command === 'pong') {
     message.channel.send('ping');
-  }
-
-  //the commander is double gay
-  else if (command === 'nohomo') {
-    message.channel.send('^ is extra double gay')
   }
 
   //respond to hey
@@ -107,10 +80,6 @@ client.on('message', message => {
     message.channel.send('hi')
   }
 
-  else if (command === 'sicko mode'){
-    message.channel.send('SICKO MODE!')
-    message.channel.send('https://www.youtube.com/watch?v=6ONRf7h3Mdk')
-  }
   //repeat back the command ~repeat a
   else if (message.content.startsWith(prefix + 'repeat')) {
     message.channel.send(message.content.subStr(8));

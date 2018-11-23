@@ -3,10 +3,10 @@ module.exports = {
     description: 'Thank another user',
     execute(message, args) {
       if (!message.mentions.users.size) {
-        return message.channel.send(message.author + " thanked " message.author + ".");
+        return message.channel.send("bruh");
       }
       else {
-        return message.channel.send(message.author + "thanked " message.mentions.users.first() + ".");
+        return message.channel.send("chief");
       }
     },
 };
