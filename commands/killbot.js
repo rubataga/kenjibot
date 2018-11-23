@@ -6,7 +6,7 @@ module.exports = {
       if (message.member.roles.has('515280398037811204')) {
         console.log(2)
         message.channel.send("bruh this can't be happening")
-        client.destroy()
+        process.exit()
       }
       console.log(3)
     },
