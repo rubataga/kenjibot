@@ -1,0 +1,23 @@
+else if (command === "maybe i'll be tracer"){
+  message.channel.send("i'm already tracer")
+}
+
+else if (command === "what about widowmaker"){
+  message.channel.send("i'm already widowmaker")
+}
+
+else if (command === "i'll be bastion"){
+  message.channel.send("NERF BASTION")
+}
+
+else if (command === "you're right, so winston"){
+  message.channel.send("i wanna be winston")
+}
+
+else if (command === "i guess i'll be genji"){
+  message.channel.send("i'm already genji")
+}
+
+else if (command === "then i'll be mccree"){
+  message.channel.send("i already chose mccree")
+}
