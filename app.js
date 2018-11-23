@@ -37,7 +37,7 @@ client.on('message', message => {
 
   //commands
 
-  else if (client.commands.has(command)) {
+  if (client.commands.has(command)) {
     try {
       client.commands.get(command).execute(message, args);
     }
