@@ -1,6 +1,8 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'help',
     description: 'shows commands',
+    aliases: ['h'],
     execute(message, args) {
       const embed = new Discord.RichEmbed()
         .setTitle("KenjiBot's Commands")

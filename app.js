@@ -33,20 +33,30 @@ client.on('message', message => {
   }
 
   const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
+  const commandName = args.shift().toLowerCase();
 
   //commands
 
-  if (client.commands.has(command)) {
-    try {
-      client.commands.get(command).execute(message, args);
-    }
-    catch (error) {
-      console.error(error);
-      message.reply('Uh oh. Houston, we have a bruh "moment" (an error has occured)');
-    }
+  const command = client.commands.get(commandName)
+    || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+  if (!command) return;
+
+  if (command.guildOnly && message.channel.type !== 'text') {
+      return message.reply("bruh... this doesn't work in the DMs bruh");
+  }
+  if (command.args && !args.length) {
+    return message.channel.send(message.author + ", you didn't provide enough arguments!");
   }
 
+  try {
+    command.execute(message, args);
+  }
+
+  catch (error) {
+    console.error(error);
+    message.reply('Uh oh. Houston, we have a bruh "moment" (an error has occured)');
+  }
 });
 
 client.login(TOKEN);
